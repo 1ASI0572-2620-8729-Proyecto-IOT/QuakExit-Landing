@@ -1,0 +1,49 @@
+---
+const faqs = [
+  {
+    q: "¿Qué sucede si se corta el suministro eléctrico por completo?",
+    a: "QuakExit cuenta con un módulo de batería de respaldo local independiente. Además, el microcontrolador opera con rutinas de eficiencia energética (Deep Sleep) para mantenerse activo ante apagones prolongados.",
+  },
+  {
+    q: "¿El sistema se puede abrir por error si pasa un camión pesado?",
+    a: "No. El sensor sísmico incorpora filtros y calibración de umbrales específicos (> 5.0) para descartar vibraciones mecánicas habituales o falsos positivos antes de activar el protocolo de emergencia.",
+  },
+  {
+    q: "¿Y el riesgo de robos durante una apertura de emergencia?",
+    a: "En un sismo mayor, la prioridad técnica de INDECI y de QuakExit es preservar la vida despejando la salida. El desbloqueo solo se activa ante eventos sísmicos reales confirmados y puede resetearse tras el evento.",
+  },
+  {
+    q: "¿Qué ocurre si el hardware sufre un fallo catastrófico?",
+    a: "El diseño incorpora un relé normalmente cerrado (Fail-Safe). Si el equipo deja de recibir señal o se daña por completo, la chapa magnética se libera por seguridad para garantizar que nadie quede atrapado.",
+  },
+];
+---
+
+<section id="faq" class="py-20">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">
+        Dudas Frecuentes
+      </h2>
+      <p class="mt-2 text-3xl font-extrabold text-white">
+        Preguntas frecuentes sobre la tecnología
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {
+        faqs.map((item) => (
+          <details class="group bg-slate-900 border border-slate-800 rounded-xl p-5 [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-between cursor-pointer font-semibold text-white">
+              <span>{item.q}</span>
+              <span class="text-amber-500 transition-transform duration-200 group-open:rotate-180">
+                ↓
+              </span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-400 leading-relaxed">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
