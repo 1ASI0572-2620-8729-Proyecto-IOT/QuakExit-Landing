@@ -1,9 +1,8 @@
 ---
-
+import GooglePlayLogo from "../images/gplay.png";
 ---
 
 <section class="relative pt-20 pb-28 overflow-hidden">
-  <!-- Glow decorativo -->
   <div
     class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-500/15 blur-[120px] rounded-full pointer-events-none -z-10"
   >
@@ -35,26 +34,54 @@
     <p
       class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal"
     >
-      QuakExit es el sistema IoT que detecta el sismo, desbloquea las cerraduras
-      de escape y activa la iluminación de emergencia de inmediato. <strong
-        class="text-white">100% operativo sin luz ni internet.</strong
+      QuakExit detecta el sismo, desbloquea tus cerraduras y activa las luces de
+      emergencia de inmediato. <strong class="text-white"
+        >100% operativo sin luz ni internet.</strong
       >
     </p>
 
-    <div
-      class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-    >
+    <!-- Botones de Acción y Plataformas -->
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+      <!-- Botón al Dashboard Web -->
       <a
-        href="#contacto"
-        class="w-full sm:w-auto px-8 py-3.5 text-base font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl transition duration-200 shadow-lg shadow-amber-500/25"
+        href="https://app.quakexit.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2.5 px-7 py-3.5 text-base font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-xl transition duration-200 shadow-lg shadow-amber-500/25"
       >
-        Cotizar Kit Residencial
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7"
+          ></path>
+        </svg>
+        Ir al Web Dashboard
       </a>
+
+      <!-- Botón estilo Google Play Store -->
       <a
-        href="#soluciones"
-        class="w-full sm:w-auto px-8 py-3.5 text-base font-semibold bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 rounded-xl transition"
+        href="#app-download"
+        class="inline-flex items-center gap-3 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 rounded-xl transition duration-200"
       >
-        Solución para Inmobiliarias (B2B)
+        <img
+          src={GooglePlayLogo.src}
+          alt="Google Play logo"
+          class="h-7 w-auto"
+        />
+        <div class="text-left leading-tight">
+          <span
+            class="block text-[10px] uppercase tracking-wider text-slate-400"
+            >Disponible en</span
+          >
+          <span class="text-sm font-bold text-white">Google Play</span>
+        </div>
       </a>
     </div>
 
