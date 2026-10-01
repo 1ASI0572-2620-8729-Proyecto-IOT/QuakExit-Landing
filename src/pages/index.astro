@@ -1,18 +1,30 @@
 ---
-import "../styles/global.css";
+import Layout from "../layouts/layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import PainPoints from "../components/PainPoints.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import AudienceTabs from "../components/AudienceTabs.astro";
+import Faq from "../components/Faq.astro";
+import ContactSection from "../components/ContactSection.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="src/styles/global.css" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<Layout title="QuakExit | Seguridad Sísmica Residencial Inteligente">
+  <Navbar />
+  <main>
+    <Hero />
+    <PainPoints />
+    <HowItWorks />
+    <AudienceTabs />
+    <Faq />
+    <ContactSection />
+  </main>
+  <footer
+    class="py-8 border-t border-slate-900 text-center text-xs text-slate-500"
+  >
+    <p>
+      © 2026 TerraGuard - QuakExit. Soluciones IoT para la preservación de la
+      vida.
+    </p>
+  </footer>
+</Layout>
