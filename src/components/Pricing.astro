@@ -2,118 +2,199 @@
 const plans = [
   {
     name: "Kit Departamento",
-    badge: "Pago Único",
+    badge: "Pago Único + Nube",
     price: "S/ 499",
-    subtitle: "Ideal para departamentos con 1 puerta principal de escape.",
-    features: [
+    cloudFee: "1er año incluido · Luego S/ 12.90/mes o S/ 129/año",
+    hardware: [
       "1 QuakExit Hub (ESP32 + Acelerómetro)",
       "1 Chapa electromagnética Fail-Safe",
       "Módulo de batería de respaldo integrada",
-      "Acceso a App Móvil (Monitoreo y Simulacros)",
-      "Instalación estándar incluida",
+      "Instalación estándar incluida"
     ],
+    cloudTitle: "Cloud Esencial incluye:",
+    cloudFeatures: [
+      "Dashboard con gemelo digital de la vivienda",
+      "Estado de dispositivos (batería, conexión, alertas)",
+      "Desbloqueo remoto y modo normal/ahorro profundo",
+      "Configuración de espacios, pisos y puertas",
+      "Simulacros manuales con cuenta regresiva y alarma",
+      "Alertas de sismo/emergencia vía Push y SMS",
+      "Hasta 5 contactos de emergencia",
+      "Alertas de batería baja y desconexión",
+      "Soporte por correo"
+    ],
+    upcoming: [],
     cta: "Comprar Kit",
-    highlight: false,
+    highlight: false
   },
   {
     name: "Kit Smart Home",
-    badge: "Más Popular · Pago Único",
+    badge: "Más Popular",
     price: "S/ 849",
-    subtitle: "Cobertura completa de salida e iluminación para casas o dúplex.",
-    features: [
+    cloudFee: "1er año incluido · Luego S/ 24.90/mes o S/ 249/año",
+    hardware: [
       "1 QuakExit Hub de rango extendido",
-      "Hasta 2 Chapas electromagnéticas Fail-Safe",
-      "Kit de relés para luces de ruta de evacuación",
-      "Batería de alta autonomía (Modo Deep Sleep)",
-      "App Móvil + Alertas SMS a 5 contactos",
-      "Instalación y calibración certificada",
+      "Hasta 2 chapas electromagnéticas Fail-Safe",
+      "Kit de relés para luces de evacuación",
+      "Batería de alta autonomía (Deep Sleep)",
+      "Instalación y calibración certificada"
     ],
-    cta: "Solicitar Kit Plus",
-    highlight: true,
+    cloudTitle: "Cloud Plus incluye:",
+    cloudFeatures: [
+      "Todo lo de Cloud Esencial",
+      "Historial de notificaciones con filtros avanzados",
+      "Reportes de sismos, simulacros y falsas alarmas",
+      "Registro de falsas alarmas con motivo",
+      "Auditoría completa (quién hizo qué y cuándo)"
+    ],
+    upcoming: [
+      "Simulacros programados",
+      "Notificaciones por WhatsApp",
+      "Más de 5 contactos de emergencia",
+      "Reportes descargables y usuarios adicionales"
+    ],
+    cta: "Solicitar Smart Home",
+    highlight: true
   },
   {
     name: "Inmobiliarias B2B",
-    badge: "Por Volumen",
+    badge: "Edificios",
     price: "A medida",
-    subtitle:
-      "Integración en planos y fase de acabados para edificios multifamiliares.",
-    features: [
+    cloudFee: "1er año incluido · Luego S/ 8.90/dpto/mes (-15% anual)",
+    hardware: [
       "Hardware por lotes con descuento de escala",
-      "Acceso al Web Dashboard B2B centralizado",
-      "Configuración masiva por CSV / MAC Address",
-      "Certificación y protocolos alineados a INDECI",
-      "Soporte técnico en obra para ingenieros",
+      "Certificación alineada a INDECI",
+      "Soporte técnico en obra para ingenieros"
     ],
-    cta: "Cotizar Proyecto",
-    highlight: false,
+    cloudTitle: "Cloud Edificio incluye:",
+    cloudFeatures: [
+      "Todo lo de Cloud Plus en cada departamento",
+      "Panel de torre: gestión de departamentos y residentes",
+      "Filtros de estado: seguros, en alerta y desconectados",
+      "Alta masiva de dispositivos por CSV o JSON",
+      "Alarmas y dispositivos en áreas comunes",
+      "Simulacros generales y reportes por edificio",
+      "Gestión de mantenimiento con notas de resolución"
+    ],
+    upcoming: ["Soporte dedicado en obra"],
+    cta: "Cotizar Edificio",
+    highlight: false
   },
+  {
+    name: "Empresarial",
+    badge: "Corporativo",
+    price: "A medida",
+    cloudFee: "Condiciones y acuerdos personalizados",
+    hardware: [
+      "Equipamiento completo para múltiples sedes",
+      "Integraciones de hardware bajo diseño"
+    ],
+    cloudTitle: "Todo lo de Cloud Edificio, más:",
+    cloudFeatures: [
+      "Soporte para múltiples edificios y sedes",
+      "Administradores y accesos ilimitados",
+      "Acuerdos de nivel de servicio (SLA) a medida"
+    ],
+    upcoming: [
+      "API pública para clientes externos",
+      "Integración con ecosistemas IoT de terceros",
+      "Analítica histórica y reportes avanzados",
+      "Soporte prioritario 24/7"
+    ],
+    cta: "Contactar Ventas",
+    highlight: false
+  }
 ];
 ---
 
-<section id="planes" class="py-24 border-t border-slate-800">
+<section id="planes" class="py-24 border-t border-slate-800 bg-slate-950">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">
-        Planes y Precios
-      </h2>
-      <p class="mt-2 text-3xl font-extrabold text-white">
-        Sin suscripciones mensuales forzosas
-      </p>
-      <p class="mt-3 text-sm text-slate-400">
-        Adquiere tu equipo con un único pago o integra seguridad sísmica a
-        escala en tu próximo edificio.
+    <div class="text-center max-w-3xl mx-auto mb-6">
+      <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">Planes y Precios</h2>
+      <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Transparente y sin ataduras</p>
+    </div>
+
+    <!-- Banner aclaratorio offline -->
+    <div class="max-w-3xl mx-auto mb-16 p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-center">
+      <p class="text-sm text-slate-200">
+        <strong class="text-amber-400">Garantía física:</strong> El equipo se paga una sola vez. La nube incluye el 1er año. <span class="text-white font-semibold">El desbloqueo de emergencia y las luces operan 100% offline</span> y nunca dependen de una suscripción activa.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {
-        plans.map((plan) => (
-          <div
-            class={`rounded-2xl p-8 flex flex-col justify-between border ${
-              plan.highlight
-                ? "bg-gradient-to-b from-amber-500/10 to-slate-950 border-amber-500 shadow-xl shadow-amber-500/10"
-                : "bg-slate-900/60 border-slate-800"
-            }`}
-          >
-            <div>
-              <span
-                class={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-4 ${
-                  plan.highlight
-                    ? "bg-amber-500 text-slate-950"
-                    : "bg-slate-800 text-slate-300"
-                }`}
-              >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {plans.map((plan) => (
+        <div class={`rounded-2xl p-6 flex flex-col justify-between border ${
+          plan.highlight 
+            ? "bg-gradient-to-b from-amber-500/10 to-slate-900 border-amber-500 shadow-xl shadow-amber-500/10" 
+            : "bg-slate-900/60 border-slate-800"
+        }`}>
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class={`text-[11px] font-bold px-2.5 py-0.5 rounded-full ${
+                plan.highlight ? "bg-amber-500 text-slate-950" : "bg-slate-800 text-slate-300"
+              }`}>
                 {plan.badge}
               </span>
-              <h3 class="text-xl font-bold text-white">{plan.name}</h3>
-              <div class="mt-4 flex items-baseline gap-1">
-                <span class="text-4xl font-black text-white">{plan.price}</span>
-              </div>
-              <p class="mt-2 text-xs text-slate-400">{plan.subtitle}</p>
+            </div>
 
-              <ul class="mt-6 space-y-3 border-t border-slate-800/80 pt-6 text-sm text-slate-300">
-                {plan.features.map((feature) => (
-                  <li class="flex items-start gap-2.5">
-                    <span class="text-amber-400 font-bold">✓</span>
-                    <span>{feature}</span>
+            <h3 class="text-lg font-bold text-white">{plan.name}</h3>
+            
+            <div class="mt-3">
+              <span class="text-3xl font-black text-white">{plan.price}</span>
+              <p class="text-xs text-amber-400/90 mt-1 font-medium leading-relaxed">{plan.cloudFee}</p>
+            </div>
+
+            <!-- Hardware -->
+            <div class="mt-6 border-t border-slate-800 pt-4">
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Hardware incluido</p>
+              <ul class="space-y-2 text-xs text-slate-300">
+                {plan.hardware.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-amber-400 font-bold shrink-0">✓</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <a
-              href="#contacto"
-              class={`mt-8 block w-full py-3 text-center text-sm font-bold rounded-xl transition ${
-                plan.highlight
-                  ? "bg-amber-500 hover:bg-amber-400 text-slate-950"
-                  : "bg-slate-800 hover:bg-slate-700 text-white"
-              }`}
-            >
-              {plan.cta}
-            </a>
+            <!-- Cloud -->
+            <div class="mt-6 border-t border-slate-800 pt-4">
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">{plan.cloudTitle}</p>
+              <ul class="space-y-2 text-xs text-slate-300">
+                {plan.cloudFeatures.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-amber-400 shrink-0">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Próximamente -->
+            {plan.upcoming.length > 0 && (
+              <div class="mt-6 border-t border-slate-800/60 pt-4">
+                <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Próximamente</p>
+                <ul class="space-y-1.5 text-xs text-slate-400">
+                  {plan.upcoming.map((item) => (
+                    <li class="flex items-start gap-2">
+                      <span class="text-slate-600 shrink-0">✦</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
-        ))
-      }
+
+          <a href="#contacto" class={`mt-8 block w-full py-2.5 text-center text-xs font-bold rounded-xl transition ${
+            plan.highlight 
+              ? "bg-amber-500 hover:bg-amber-400 text-slate-950" 
+              : "bg-slate-800 hover:bg-slate-700 text-white"
+          }`}>
+            {plan.cta}
+          </a>
+        </div>
+      ))}
     </div>
   </div>
 </section>
