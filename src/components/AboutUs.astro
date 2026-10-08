@@ -1,0 +1,77 @@
+---
+import Video from "../ui/Video.astro";
+
+// const aboutTheTeamVideo =
+//   "https://drive.google.com/file/d/16jMDioUhBDkHK5oRhv3hPGo_qzby2eX6/preview";
+
+const aboutTheProductVideo =
+  "https://drive.google.com/file/d/1vGnquQHfiYyPUvgIyMRiK7XKMtCH8IdE/preview";
+---
+
+<section id="nosotros" class="py-20 border-y border-slate-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
+      <div>
+        <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">
+          Sobre nosotros
+        </h2>
+        <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">
+          Tecnología que convierte la prevención en una salida segura.
+        </p>
+      </div>
+      <p class="text-slate-400 leading-relaxed">
+        En TerraGuard desarrollamos soluciones IoT pensadas para responder
+        cuando más importa. QuakExit combina detección local, automatización y
+        diseño práctico para que las personas puedan evacuar sin depender de
+        internet, la energía eléctrica o la intervención humana.
+      </p>
+    </div>
+
+    <!-- grid grid-cols-1 lg:grid-cols-2 -->
+
+    <div class="mt-12 gap-8">
+      <!-- <div
+        class="bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl"
+      >
+        <Video
+          title="Conoce al equipo"
+          description="Las personas detrás de una tecnología creada para proteger vidas."
+          srcLink={aboutTheTeamVideo}
+        />
+      </div> -->
+
+      <div
+        class="bg-slate-900 border border-amber-500/20 p-6 sm:p-8 rounded-2xl"
+      >
+        <Video
+          title="Conoce QuakExit"
+          description="Descubre cómo funciona nuestro sistema de evacuación sísmica."
+          srcLink={aboutTheProductVideo}
+        />
+      </div>
+    </div>
+
+    <div
+      class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-slate-800 pt-8"
+    >
+      <div class="p-4">
+        <p class="text-2xl font-black text-amber-400">Local-first</p>
+        <p class="mt-1 text-sm text-slate-400">
+          Decisiones críticas procesadas dentro de tu hogar.
+        </p>
+      </div>
+      <div class="p-4">
+        <p class="text-2xl font-black text-amber-400">Diseño humano</p>
+        <p class="mt-1 text-sm text-slate-400">
+          Tecnología clara, útil y lista para actuar bajo presión.
+        </p>
+      </div>
+      <div class="p-4">
+        <p class="text-2xl font-black text-amber-400">Impacto real</p>
+        <p class="mt-1 text-sm text-slate-400">
+          Innovación enfocada en preservar vidas, no solo en enviar alertas.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
