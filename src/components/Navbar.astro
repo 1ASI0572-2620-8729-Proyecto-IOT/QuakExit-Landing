@@ -1,5 +1,10 @@
 ---
 import QuakExitLogo from "../images/logo.png";
+import LanguagePicket from "./LanguagePicket.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <header
@@ -9,7 +14,7 @@ import QuakExitLogo from "../images/logo.png";
     class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
   >
     <div class="flex items-center gap-2">
-      <a href="#" class="flex items-center gap-3">
+      <a href={lang === "en" ? "/en/" : "/"} class="flex items-center gap-3">
         <img src={QuakExitLogo.src} alt="QuakExit Logo" class="h-15 w-auto" />
       </a>
       <span
@@ -19,24 +24,25 @@ import QuakExitLogo from "../images/logo.png";
     </div>
 
     <nav class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-      <a href="#problema" class="hover:text-amber-400 transition">El Problema</a
+      <a href="#problema" class="hover:text-amber-400 transition">{t("nav.problem")}</a
       >
       <a href="#como-funciona" class="hover:text-amber-400 transition"
-        >Cómo Funciona</a
+        >{t("nav.how")}</a
       >
-      <a href="#nosotros" class="hover:text-amber-400 transition">Nosotros</a>
+      <a href="#nosotros" class="hover:text-amber-400 transition">{t("nav.about")}</a>
       <a href="#soluciones" class="hover:text-amber-400 transition"
-        >Soluciones</a
+        >{t("nav.solutions")}</a
       >
-      <a href="#faq" class="hover:text-amber-400 transition">Preguntas</a>
+      <a href="#faq" class="hover:text-amber-400 transition">{t("nav.faq")}</a>
     </nav>
 
     <div class="flex items-center gap-3">
+      <LanguagePicket />
       <a
         href="#contacto"
         class="text-sm font-semibold bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2 rounded-lg transition duration-200 shadow-md shadow-amber-500/10"
       >
-        Cotizar Proyecto
+        {t("nav.quote")}
       </a>
     </div>
   </div>

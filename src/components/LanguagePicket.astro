@@ -1,0 +1,35 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+  class="inline-flex items-center gap-1 rounded-lg border border-slate-700 bg-slate-900 p-1 text-xs font-bold"
+  role="group"
+  aria-label={t("nav.language")}
+>
+  <a
+    href="/"
+    lang="es"
+    aria-current={lang === "es" ? "page" : undefined}
+    class:list={[
+      "rounded-md px-2.5 py-1.5 transition",
+      lang === "es"
+        ? "bg-amber-500 text-slate-950"
+        : "text-slate-300 hover:bg-slate-800 hover:text-white",
+    ]}
+  >ES</a>
+  <a
+    href="/en/"
+    lang="en"
+    aria-current={lang === "en" ? "page" : undefined}
+    class:list={[
+      "rounded-md px-2.5 py-1.5 transition",
+      lang === "en"
+        ? "bg-amber-500 text-slate-950"
+        : "text-slate-300 hover:bg-slate-800 hover:text-white",
+    ]}
+  >EN</a>
+</div>

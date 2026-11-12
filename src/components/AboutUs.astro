@@ -1,5 +1,8 @@
 ---
 import Video from "../ui/Video.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
 
 // const aboutTheTeamVideo =
 //   "https://drive.google.com/file/d/16jMDioUhBDkHK5oRhv3hPGo_qzby2eX6/preview";
@@ -13,17 +16,14 @@ const aboutTheProductVideo =
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
       <div>
         <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">
-          Sobre nosotros
+          {t("about.title")}
         </h2>
         <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">
-          Tecnología que convierte la prevención en una salida segura.
+          {t("about.subtitle")}
         </p>
       </div>
       <p class="text-slate-400 leading-relaxed">
-        En TerraGuard desarrollamos soluciones IoT pensadas para responder
-        cuando más importa. QuakExit combina detección local, automatización y
-        diseño práctico para que las personas puedan evacuar sin depender de
-        internet, la energía eléctrica o la intervención humana.
+        {t("about.body")}
       </p>
     </div>
 
@@ -44,8 +44,8 @@ const aboutTheProductVideo =
         class="bg-slate-900 border border-amber-500/20 p-6 sm:p-8 rounded-2xl"
       >
         <Video
-          title="Conoce QuakExit"
-          description="Descubre cómo funciona nuestro sistema de evacuación sísmica."
+          title={t("about.video.title")}
+          description={t("about.video.description")}
           srcLink={aboutTheProductVideo}
         />
       </div>
@@ -57,19 +57,19 @@ const aboutTheProductVideo =
       <div class="p-4">
         <p class="text-2xl font-black text-amber-400">Local-first</p>
         <p class="mt-1 text-sm text-slate-400">
-          Decisiones críticas procesadas dentro de tu hogar.
+          {t("about.feature1.body")}
         </p>
       </div>
       <div class="p-4">
-        <p class="text-2xl font-black text-amber-400">Diseño humano</p>
+        <p class="text-2xl font-black text-amber-400">{t("about.feature2.title")}</p>
         <p class="mt-1 text-sm text-slate-400">
-          Tecnología clara, útil y lista para actuar bajo presión.
+          {t("about.feature2.body")}
         </p>
       </div>
       <div class="p-4">
-        <p class="text-2xl font-black text-amber-400">Impacto real</p>
+        <p class="text-2xl font-black text-amber-400">{t("about.feature3.title")}</p>
         <p class="mt-1 text-sm text-slate-400">
-          Innovación enfocada en preservar vidas, no solo en enviar alertas.
+          {t("about.feature3.body")}
         </p>
       </div>
     </div>

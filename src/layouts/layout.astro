@@ -1,23 +1,24 @@
 ---
 interface Props {
   title: string;
+  description: string;
+  lang: "es" | "en";
 }
 
-const { title } = Astro.props;
+const { title, description, lang } = Astro.props;
 
 import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.jpg" />
-    <link rel="stylesheet" href="src/styles/global.css" />
     <meta
       name="description"
-      content="QuakExit: Sistema IoT de evacuación sísmica residencial. Desbloqueo automático de cerraduras e iluminación de emergencia."
+      content={description}
     />
     <title>{title}</title>
   </head>

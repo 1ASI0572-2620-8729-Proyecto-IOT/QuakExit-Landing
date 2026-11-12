@@ -1,123 +1,128 @@
 ---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const plans = [
   {
-    name: "Kit Departamento",
-    badge: "Pago Único + Nube",
+    name: t("pricing.department.name"),
+    badge: t("pricing.department.badge"),
     price: "S/ 499",
-    cloudFee: "1er año incluido · Luego S/ 12.90/mes o S/ 129/año",
+    cloudFee: t("pricing.department.fee"),
     hardware: [
-      "1 QuakExit Hub (ESP32 + Acelerómetro)",
-      "1 Chapa electromagnética Fail-Safe",
-      "Módulo de batería de respaldo integrada",
-      "Instalación estándar incluida"
+      t("pricing.department.hw1"),
+      t("pricing.department.hw2"),
+      t("pricing.department.hw3"),
+      t("pricing.department.hw4"),
     ],
-    cloudTitle: "Cloud Esencial incluye:",
+    cloudTitle: t("pricing.department.cloud.title"),
     cloudFeatures: [
-      "Dashboard con gemelo digital de la vivienda",
-      "Estado de dispositivos (batería, conexión, alertas)",
-      "Desbloqueo remoto y modo normal/ahorro profundo",
-      "Configuración de espacios, pisos y puertas",
-      "Simulacros manuales con cuenta regresiva y alarma",
-      "Alertas de sismo/emergencia vía Push y SMS",
-      "Hasta 5 contactos de emergencia",
-      "Alertas de batería baja y desconexión",
-      "Soporte por correo"
+      t("pricing.department.cloud1"),
+      t("pricing.department.cloud2"),
+      t("pricing.department.cloud3"),
+      t("pricing.department.cloud4"),
+      t("pricing.department.cloud5"),
+      t("pricing.department.cloud6"),
+      t("pricing.department.cloud7"),
+      t("pricing.department.cloud8"),
+      t("pricing.department.cloud9"),
     ],
     upcoming: [],
-    cta: "Comprar Kit",
-    highlight: false
+    cta: t("pricing.department.cta"),
+    highlight: false,
   },
   {
-    name: "Kit Smart Home",
-    badge: "Más Popular",
+    name: t("pricing.smart.name"),
+    badge: t("pricing.smart.badge"),
     price: "S/ 849",
-    cloudFee: "1er año incluido · Luego S/ 24.90/mes o S/ 249/año",
+    cloudFee: t("pricing.smart.fee"),
     hardware: [
-      "1 QuakExit Hub de rango extendido",
-      "Hasta 2 chapas electromagnéticas Fail-Safe",
-      "Kit de relés para luces de evacuación",
-      "Batería de alta autonomía (Deep Sleep)",
-      "Instalación y calibración certificada"
+      t("pricing.smart.hw1"),
+      t("pricing.smart.hw2"),
+      t("pricing.smart.hw3"),
+      t("pricing.smart.hw4"),
+      t("pricing.smart.hw5"),
     ],
-    cloudTitle: "Cloud Plus incluye:",
+    cloudTitle: t("pricing.smart.cloud.title"),
     cloudFeatures: [
-      "Todo lo de Cloud Esencial",
-      "Historial de notificaciones con filtros avanzados",
-      "Reportes de sismos, simulacros y falsas alarmas",
-      "Registro de falsas alarmas con motivo",
-      "Auditoría completa (quién hizo qué y cuándo)"
+      t("pricing.smart.cloud1"),
+      t("pricing.smart.cloud2"),
+      t("pricing.smart.cloud3"),
+      t("pricing.smart.cloud4"),
+      t("pricing.smart.cloud5"),
     ],
     upcoming: [
-      "Simulacros programados",
-      "Notificaciones por WhatsApp",
-      "Más de 5 contactos de emergencia",
-      "Reportes descargables y usuarios adicionales"
+      t("pricing.smart.upcoming1"),
+      t("pricing.smart.upcoming2"),
+      t("pricing.smart.upcoming3"),
+      t("pricing.smart.upcoming4"),
     ],
-    cta: "Solicitar Smart Home",
-    highlight: true
+    cta: t("pricing.smart.cta"),
+    highlight: true,
   },
   {
-    name: "Inmobiliarias B2B",
-    badge: "Edificios",
-    price: "A medida",
-    cloudFee: "1er año incluido · Luego S/ 8.90/dpto/mes (-15% anual)",
+    name: t("pricing.business.name"),
+    badge: t("pricing.business.badge"),
+    price: lang === "en" ? "Custom" : "A medida",
+    cloudFee: t("pricing.business.fee"),
     hardware: [
-      "Hardware por lotes con descuento de escala",
-      "Certificación alineada a INDECI",
-      "Soporte técnico en obra para ingenieros"
+      t("pricing.business.hw1"),
+      t("pricing.business.hw2"),
+      t("pricing.business.hw3"),
     ],
-    cloudTitle: "Cloud Edificio incluye:",
+    cloudTitle: t("pricing.business.cloud.title"),
     cloudFeatures: [
-      "Todo lo de Cloud Plus en cada departamento",
-      "Panel de torre: gestión de departamentos y residentes",
-      "Filtros de estado: seguros, en alerta y desconectados",
-      "Alta masiva de dispositivos por CSV o JSON",
-      "Alarmas y dispositivos en áreas comunes",
-      "Simulacros generales y reportes por edificio",
-      "Gestión de mantenimiento con notas de resolución"
+      t("pricing.business.cloud1"),
+      t("pricing.business.cloud2"),
+      t("pricing.business.cloud3"),
+      t("pricing.business.cloud4"),
+      t("pricing.business.cloud5"),
+      t("pricing.business.cloud6"),
+      t("pricing.business.cloud7"),
     ],
-    upcoming: ["Soporte dedicado en obra"],
-    cta: "Cotizar Edificio",
-    highlight: false
+    upcoming: [t("pricing.business.upcoming1")],
+    cta: t("pricing.business.cta"),
+    highlight: false,
   },
   {
-    name: "Empresarial",
-    badge: "Corporativo",
-    price: "A medida",
-    cloudFee: "Condiciones y acuerdos personalizados",
+    name: t("pricing.enterprise.name"),
+    badge: t("pricing.enterprise.badge"),
+    price: lang === "en" ? "Custom" : "A medida",
+    cloudFee: t("pricing.enterprise.fee"),
     hardware: [
-      "Equipamiento completo para múltiples sedes",
-      "Integraciones de hardware bajo diseño"
+      t("pricing.enterprise.hw1"),
+      t("pricing.enterprise.hw2"),
     ],
-    cloudTitle: "Todo lo de Cloud Edificio, más:",
+    cloudTitle: t("pricing.enterprise.cloud.title"),
     cloudFeatures: [
-      "Soporte para múltiples edificios y sedes",
-      "Administradores y accesos ilimitados",
-      "Acuerdos de nivel de servicio (SLA) a medida"
+      t("pricing.enterprise.cloud1"),
+      t("pricing.enterprise.cloud2"),
+      t("pricing.enterprise.cloud3"),
     ],
     upcoming: [
-      "API pública para clientes externos",
-      "Integración con ecosistemas IoT de terceros",
-      "Analítica histórica y reportes avanzados",
-      "Soporte prioritario 24/7"
+      t("pricing.enterprise.upcoming1"),
+      t("pricing.enterprise.upcoming2"),
+      t("pricing.enterprise.upcoming3"),
+      t("pricing.enterprise.upcoming4"),
     ],
-    cta: "Contactar Ventas",
-    highlight: false
-  }
+    cta: t("pricing.enterprise.cta"),
+    highlight: false,
+  },
 ];
 ---
 
 <section id="planes" class="py-24 border-t border-slate-800 bg-slate-950">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-6">
-      <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">Planes y Precios</h2>
-      <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">Transparente y sin ataduras</p>
+      <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">{t("pricing.title")}</h2>
+      <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-white">{t("pricing.subtitle")}</p>
     </div>
 
     <!-- Banner aclaratorio offline -->
     <div class="max-w-3xl mx-auto mb-16 p-4 rounded-xl border border-amber-500/30 bg-amber-500/10 text-center">
       <p class="text-sm text-slate-200">
-        <strong class="text-amber-400">Garantía física:</strong> El equipo se paga una sola vez. La nube incluye el 1er año. <span class="text-white font-semibold">El desbloqueo de emergencia y las luces operan 100% offline</span> y nunca dependen de una suscripción activa.
+        <strong class="text-amber-400">{t("pricing.guarantee.title")}</strong> {t("pricing.guarantee.body")} <span class="text-white font-semibold">{t("pricing.guarantee.emphasis")}</span> {t("pricing.guarantee.end")}
       </p>
     </div>
 
@@ -146,7 +151,7 @@ const plans = [
 
             <!-- Hardware -->
             <div class="mt-6 border-t border-slate-800 pt-4">
-              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Hardware incluido</p>
+              <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">{t("pricing.hardware")}</p>
               <ul class="space-y-2 text-xs text-slate-300">
                 {plan.hardware.map((item) => (
                   <li class="flex items-start gap-2">
@@ -173,7 +178,7 @@ const plans = [
             <!-- Próximamente -->
             {plan.upcoming.length > 0 && (
               <div class="mt-6 border-t border-slate-800/60 pt-4">
-                <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Próximamente</p>
+                <p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">{t("pricing.upcoming")}</p>
                 <ul class="space-y-1.5 text-xs text-slate-400">
                   {plan.upcoming.map((item) => (
                     <li class="flex items-start gap-2">

@@ -1,10 +1,15 @@
 ---
 import GooglePlayLogo from "../images/gplay.png";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="relative pt-20 pb-28 overflow-hidden">
   <div
-    class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-amber-500/15 blur-[120px] rounded-full pointer-events-none -z-10"
+    class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-87.5 bg-amber-500/15 blur-[120px] rounded-full pointer-events-none -z-10"
   >
   </div>
 
@@ -19,24 +24,23 @@ import GooglePlayLogo from "../images/gplay.png";
         <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"
         ></span>
       </span>
-      Respuesta física automatizada ante sismos en &lt; 5 segundos
+      {t("hero.span")}
     </div>
 
     <h1
       class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-none"
     >
-      En un terremoto, los segundos salvan vidas. <span
-        class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500"
-        >Tu puerta no puede ser una trampa.</span
+      {t("hero.title.pt1")} <span
+        class="text-transparent bg-clip-text bg-linear-to-r from-amber-400 to-orange-500"
+        >{t("hero.title.pt2")}</span
       >
     </h1>
 
     <p
       class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal"
     >
-      QuakExit detecta el sismo, desbloquea tus cerraduras y activa las luces de
-      emergencia de inmediato. <strong class="text-white"
-        >100% operativo sin luz ni internet.</strong
+      {t("hero.p.pt1")} <strong class="text-white"
+        >{t("hero.p.pt2")}</strong
       >
     </p>
 
@@ -62,7 +66,7 @@ import GooglePlayLogo from "../images/gplay.png";
             d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7"
           ></path>
         </svg>
-        Ir al Web Dashboard
+        {t("hero.a.dash")}
       </a>
 
       <!-- Botón estilo Google Play Store -->
@@ -80,7 +84,7 @@ import GooglePlayLogo from "../images/gplay.png";
         <div class="text-left leading-tight">
           <span
             class="block text-[10px] uppercase tracking-wider text-slate-400"
-            >Disponible en</span
+            >{t("hero.a.gplay")}</span
           >
           <span class="text-sm font-bold text-white">Google Play</span>
         </div>
@@ -93,19 +97,19 @@ import GooglePlayLogo from "../images/gplay.png";
     >
       <div class="p-3">
         <p class="text-2xl font-black text-amber-400">&lt; 5s</p>
-        <p class="text-xs text-slate-400">Tiempo de desbloqueo</p>
+        <p class="text-xs text-slate-400">{t("hero.indicator.time")}</p>
       </div>
       <div class="p-3">
         <p class="text-2xl font-black text-amber-400">Edge IoT</p>
-        <p class="text-xs text-slate-400">Procesamiento local offline</p>
+        <p class="text-xs text-slate-400">{t("hero.indicator.offline")}</p>
       </div>
       <div class="p-3">
         <p class="text-2xl font-black text-amber-400">Fail-Safe</p>
-        <p class="text-xs text-slate-400">Liberación automática ante falla</p>
+        <p class="text-xs text-slate-400">{t("hero.indicator.release")}</p>
       </div>
       <div class="p-3">
-        <p class="text-2xl font-black text-amber-400">Batería</p>
-        <p class="text-xs text-slate-400">Autonomía ante cortes eléctricos</p>
+        <p class="text-2xl font-black text-amber-400">{t("hero.indicator.battery.title")}</p>
+        <p class="text-xs text-slate-400">{t("hero.indicator.battery")}</p>
       </div>
     </div>
   </div>

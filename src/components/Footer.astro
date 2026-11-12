@@ -1,0 +1,29 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import TermsModal from "./TermsModal.astro";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-900">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-sm">&copy; 2026 QuakExit. <span>{t("footer.rights")}</span></p>
+    
+    <button 
+      id="open-terms-btn" 
+      class="text-sm text-emerald-400 hover:underline focus:outline-none"
+    >
+      {t("footer.terms")}
+    </button>
+  </div>
+</footer>
+<TermsModal />
+
+<script>
+  const openBtn = document.getElementById('open-terms-btn');
+  const modal = document.getElementById('terms-modal') as HTMLDialogElement;
+
+  openBtn?.addEventListener('click', () => {
+    modal?.showModal();
+  });
+</script>
