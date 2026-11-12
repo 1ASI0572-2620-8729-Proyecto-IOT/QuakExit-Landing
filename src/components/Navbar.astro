@@ -1,6 +1,6 @@
 ---
 import QuakExitLogo from "../images/logo.png";
-import LanguagePicket from "./LanguagePicker.astro";
+import LanguagePicker from "./LanguagePicker.astro";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -37,7 +37,7 @@ const t = useTranslations(lang);
     </nav>
 
     <div class="flex items-center gap-3">
-      <LanguagePicket />
+      <LanguagePicker />
       <a
         href="#contacto"
         class="text-sm font-semibold bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2 rounded-lg transition duration-200 shadow-md shadow-amber-500/10"
